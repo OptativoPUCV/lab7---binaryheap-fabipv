@@ -24,8 +24,10 @@ void* heap_top(Heap* pq)
   {
     return NULL;
   }
+
+  //Si hay datos en el monticulo
   
-  return NULL;
+  return pq->heapArray[0];
 }
 
 
