@@ -27,7 +27,7 @@ void* heap_top(Heap* pq)
 
   //Si hay datos en el monticulo
   
-  return pq->heapArray[0].data;
+  return pq->heapArray[0].datas;
 }
 
 
