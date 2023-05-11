@@ -126,3 +126,20 @@ heap.c:38:9: error: unused variable ‘nuevaCapac’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 4b56075
+Thu 11 May 2023 11:51:55 PM UTC: 
+ heap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:39:85: error: expected ‘)’ before ‘;’ token
+   39 |     pq->heapArray = (heapElem *) realloc(pq->heapArray, nuevaCapac* sizeof(heapElem);
+      |                                         ~                                           ^
+      |                                                                                     )
+heap.c:39:86: error: expected ‘;’ before ‘}’ token
+   39 |     pq->heapArray = (heapElem *) realloc(pq->heapArray, nuevaCapac* sizeof(heapElem);
+      |                                                                                      ^
+      |                                                                                      ;
+   40 |   }
+      |   ~                                                                                   
+Compilation failed
+ca16461
