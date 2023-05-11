@@ -143,3 +143,20 @@ heap.c:39:86: error: expected ‘;’ before ‘}’ token
       |   ~                                                                                   
 Compilation failed
 ca16461
+Thu 11 May 2023 11:53:36 PM UTC: 
+ heap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:39:84: error: expected ‘)’ before ‘;’ token
+   39 |     pq->heapArray = (heapElem *) realloc(pq->heapArray, nuevaCapac*sizeof(heapElem);
+      |                                         ~                                          ^
+      |                                                                                    )
+heap.c:40:28: error: expected ‘;’ before ‘}’ token
+   40 |     pq->capac = nuevaCapac;
+      |                            ^
+      |                            ;
+   41 |   }
+      |   ~                         
+Compilation failed
+1d2394f
