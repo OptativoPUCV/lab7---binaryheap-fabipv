@@ -21,3 +21,14 @@ heap.c:37:10: error: unused variable ‘nuevoHeap’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 0bcff76
+Thu 11 May 2023 07:53:53 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:37:10: error: unused variable ‘nuevoHeap’ [-Werror=unused-variable]
+   37 |   Heap * nuevoHeap = (Heap *) malloc(sizeof(Heap));
+      |          ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c02f876
