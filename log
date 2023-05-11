@@ -115,3 +115,14 @@ Thu 11 May 2023 08:48:52 PM UTC:
  tests:  2|2
 total_score: 20/70
 bdfa844
+Thu 11 May 2023 11:50:03 PM UTC: 
+ heap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:38:9: error: unused variable ‘nuevaCapac’ [-Werror=unused-variable]
+   38 |     int nuevaCapac = (pq->capac * 2) + 1;
+      |         ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4b56075

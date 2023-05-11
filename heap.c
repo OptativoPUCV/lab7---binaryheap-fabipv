@@ -26,13 +26,17 @@ void* heap_top(Heap* pq)
   }
 
   //Si hay datos en el monticulo
-  
   return pq->heapArray[0].data;
 }
 
 
-
-void heap_push(Heap* pq, void* data, int priority){
+void heap_push(Heap* pq, void* data, int priority)
+{
+  //Revisar si el arreglo esta lleno
+  if(pq->size > pq->capac)
+  {
+    int nuevaCapac = (pq->capac * 2) + 1;
+  }
 
 }
 
