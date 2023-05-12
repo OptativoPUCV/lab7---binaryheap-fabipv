@@ -78,33 +78,6 @@ void heap_pop(Heap* pq)
   //eliminar el ultimo 
   pq->size--;
 
-  if(pq->size == 1)
-  {
-    pq->capac = 0;
-    return;
-  }
-
-  for(int i = 0; i < pq->capac; i++)
-    {
-      int izqHijo = 2*i + 1;
-      int derHijo = 2*i + 2;
-
-      if(pq->heapArray[izqHijo].priority > pq->heapArray[derHijo].priority)
-      {
-        aux = pq->heapArray[(i - 1) / 2];
-        pq->heapArray[(i - 1) / 2] = pq->heapArray[izqHijo];
-        pq->heapArray[izqHijo] = aux;
-      }
-      else
-      {
-        aux = pq->heapArray[(i - 1) / 2];
-        pq->heapArray[(i - 1) / 2] = pq->heapArray[derHijo];
-        pq->heapArray[derHijo] = aux;
-      }
-    }
-  
-
-  
 
 }
 
