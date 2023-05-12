@@ -64,19 +64,14 @@ void heap_push(Heap* pq, void* data, int priority)
 
 void heap_pop(Heap* pq)
 {
-  //Si esta vacio
   if(pq->size == 0)
   {
-    return; 
+    return;
   }
 
-  //Intercambiar el primero con el ultimo
+  pq->heapArray[0] = pq->heapArray[pq->size];
 
- // heapElem aux;
-  pq->heapArray[0] = pq->heapArray[pq->size-1];
-
-  //eliminar el ultimo 
-  pq->size--;
+  
 
 
 }
