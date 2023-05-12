@@ -215,3 +215,17 @@ Fri 12 May 2023 12:53:47 AM UTC:
  tests:  2|2
 total_score: 20/70
 c657af6
+Fri 12 May 2023 12:55:37 AM UTC: 
+ heap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:54:22: error: invalid initializer
+   54 |       heapElem aux = pq,heapArray;
+      |                      ^~
+heap.c:54:25: error: unused variable ‘heapArray’ [-Werror=unused-variable]
+   54 |       heapElem aux = pq,heapArray;
+      |                         ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+19c27e8
