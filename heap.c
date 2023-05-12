@@ -40,31 +40,35 @@ void heap_push(Heap* pq, void* data, int priority)
     pq->capac = nuevaCapac;
   }
   
-    heapElem new;
-    new.data = data;
-    new.priority = priority;
+  heapElem new;
+  new.data = data;
+  new.priority = priority;
 
-    int pos = pq->size;
-    pq->heapArray[pos] = new;
-    pq->size++;
+  int pos = pq->size;
+  pq->heapArray[pos] = new;
+  pq->size++;
 
-    int nuevaPos = (pos - 1) / 2;
+  int nuevaPos = (pos - 1) / 2;
 
-    while(pos > 0 && (pq->heapArray[pos].priority > pq->heapArray[nuevaPos].priority))
-    {
-      heapElem aux = pq->heapArray[pos];
-      pq->heapArray[pos] = pq->heapArray[nuevaPos];
-      pq->heapArray[nuevaPos] = aux;
+  while(pos > 0 && (pq->heapArray[pos].priority > pq->heapArray[nuevaPos].priority))
+  {
+    heapElem aux = pq->heapArray[pos];
+    pq->heapArray[pos] = pq->heapArray[nuevaPos];
+    pq->heapArray[nuevaPos] = aux;
 
-      pos = nuevaPos;
-      nuevaPos = (pos - 1) / 2;
-    }
-
+    pos = nuevaPos;
+    nuevaPos = (pos - 1) / 2;
+  }
 }
 
 
 void heap_pop(Heap* pq)
 {
+  //Si esta vacio
+  if(pq->size == 0)
+  {
+    return;
+  }
   
 
 }
