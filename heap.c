@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "heap.h"
 
 typedef struct nodo{
@@ -74,8 +75,23 @@ void heap_pop(Heap* pq)
   //mover el ultimo al primero
   pq->heapArray[0] = pq->heapArray[pq->size-1];
 
-  //reducir
+  //eliminar
   pq->size--;
+
+  //reordenar 
+
+  int actual = 0;
+  int hijoIzq = (2 * actual)+ 1;
+  int hijoDer = (2 * actual)+ 2;
+
+  while(true)
+  {
+    if(hijoIzq >= pq->size && hijoDer >= pq->size)
+    {
+      break
+    }
+    
+  }
 
   
 
