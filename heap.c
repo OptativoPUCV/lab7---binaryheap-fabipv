@@ -86,52 +86,30 @@ void heap_pop(Heap* pq)
     int izqHijo = (2*pos) + 1;
     int derHijo = (2*pos) + 2;
 
-    
-    if((izqHijo < pq->size) && (derHijo < pq->size))
+    if(izqHijo >= pq->size)
     {
-      if((pq->heapArray[pos].priority > pq->heapArray[izqHijo].priority) || (pq->heapArray[pos].priority > pq->heapArray[derHijo].priority))
-      {
-        if(pq->heapArray[izqHijo].priority < pq->heapArray[derHijo].priority)
-        {
-          // intercambio con el hijo izquierdo
-          heapElem aux = pq->heapArray[pos];
-          pq->heapArray[pos] = pq->heapArray[izqHijo];
-          pq->heapArray[izqHijo] = aux;
-          pos = izqHijo;
-        }
-        else
-        {
-          //intercambio con el hijo derecho
-          heapElem aux = pq->heapArray[pos];
-          pq->heapArray[pos] = pq->heapArray[derHijo];
-          pq->heapArray[derHijo] = aux;
-          pos = derHijo;
-        }
-      }
-      else
-      {
-        break;
-      }
+      break;
     }
-    else if (izqHijo < pq->size)
+
+    int hijoMenor = izqHijo;
+
+    if((derHijo < pq->size) && (pq->heapArray[derHijo].priority < pq->heapArray[izqHijo].priority))
     {
-      if(pq->heapArray[pos].priority > pq->heapArray[izqHijo].priority)
-      {
-        heapElem aux = pq->heapArray[pos];
-        pq->heapArray[pos] = pq->heapArray[izqHijo];
-        pq->heapArray[izqHijo] = aux;
-        pos= izqHijo;
-      }
-      else
-      {
-        break;
-      }
+      hijoMenor = derHijo;
+    }
+
+    if(pq->heapArray[pos].priority > pq->heapArray[hijoMenor].priority)
+    {
+      heapElem aux = pq->heapArray[pos];
+      pq->heapArray[pos] = pq->heapArray[hijoMenor];
+      pq->heapArray[hijoMenor] = aux;
     }
     else
     {
       break;
     }
   }
+  
 
 }
 
