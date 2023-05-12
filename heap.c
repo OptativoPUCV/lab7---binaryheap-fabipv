@@ -104,7 +104,30 @@ void heap_pop(Heap* pq)
       {
         break;
       }
+      else if (pq->heapArray[hijoDer].priority <= pq->heapArray[hijoIzq].priority)
+      {
+        break;
+      }
+      else
+      {
+        heapElem aux = pq->heapArray[hijoIzq];
+        pq->heapArray[hijoIzq] = pq->heapArray[actual];
+        pq->heapArray[actual] = aux;
+        actual = hijoIzq;
         
+      }  
+    }
+    else if(pq->heapArray[hijoIzq].priority > pq->heapArray[actual].priority)
+    {
+      heapElem aux = pq->heapArray[hijoIzq];
+      pq->heapArray[hijoIzq] = pq->heapArray[actual];
+      pq->heapArray[actual] = aux;
+      actual = hijoIzq;
+      
+    }
+    else
+    {
+      break,
     }
     
   }
