@@ -505,3 +505,14 @@ heap.c:72:7: error: unused variable ‘mayor’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 038230b
+Fri 12 May 2023 12:36:44 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:72:12: error: unused variable ‘mayor’ [-Werror=unused-variable]
+   72 |   heapElem mayor = pq->heapArray[0];
+      |            ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+97614b2

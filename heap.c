@@ -69,7 +69,7 @@ void heap_pop(Heap* pq)
     return;
   }
 
-  int mayor = pq->heapArray[0];
+  heapElem mayor = pq->heapArray[0];
 
   //mover el ultimo al primero
   pq->heapArray[0] = pq->heapArray[pq->size-1];
