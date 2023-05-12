@@ -73,6 +73,8 @@ void heap_pop(Heap* pq)
   //mover el ultimo al primero
   pq->heapArray[0] = pq->heapArray[pq->size];
 
+  pq->size--;
+
 
   //reordenar 
 
@@ -81,10 +83,15 @@ void heap_pop(Heap* pq)
   int der = (2 * pq->size)+ 2;
   heapElem aux;
 
-  while(pq->heapArray[current].priority < pq->heapArray[izq].priority || pq->heapArray[current].priority < pq->heapArray[der].priority)
+  while(1)
   {
+    if(izq >= pq->size && der >= pq->size)
+    {
+      break;
+    }
+   
 
-    if(pq->heapArray[current].priority < pq->heapArray[izq].priority &&pq->heapArray[current].priority > pq->heapArray[der].priority)
+    if(pq->heapArray[current].priority < pq->heapArray[izq].priority && pq->heapArray[current].priority > pq->heapArray[der].priority)
     {
       aux = pq->heapArray[current];
       pq->heapArray[current] = pq->heapArray[izq];
@@ -106,7 +113,7 @@ void heap_pop(Heap* pq)
       der = (2 * current)+ 2;
     }
   }
-  pq->size--;
+  
 }
 
 Heap* createHeap()
