@@ -54,7 +54,9 @@ void heap_push(Heap* pq, void* data, int priority)
       heapElem aux = pq->heapArray[pos];
       pq->heapArray[pos] = pq->heapArray[nuevaPos];
       pq->heapArray[nuevaPos] = aux;
-      
+
+      pos = nuevaPos;
+      nuevaPos = (pos - 1) / 2;
     }
     
 
