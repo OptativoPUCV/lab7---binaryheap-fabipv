@@ -78,12 +78,12 @@ void heap_pop(Heap* pq)
 
   //reordenar 
 
-  int var = 0;
+  int comparador = 0;
   heapElem aux;
 
   while(1)
   {
-    int current = var;
+    int current = comparador;
     int izq = (2 * current)+ 1;
     int der = (2 * current)+ 2;
 
@@ -98,16 +98,16 @@ void heap_pop(Heap* pq)
       current = der;
     }
 
-    if(current ==  var)
+    if(current ==  comparador)
     {
       break;
     }
     
-    aux = pq->heapArray[var];
-    pq->heapArray[var] = pq->heapArray[current];
-    pq->heapArray[current] = aux;
+    aux = pq->heapArray[comparador];
+    pq->heapArray[comparador] = pq->heapArray[current];
+    pq->heapArray[comparador] = aux;
     
-    var = current;
+    comparador = current;
   }
   
 }
