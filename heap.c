@@ -76,7 +76,7 @@ void heap_pop(Heap* pq)
   int indiceAct = 0;
   heapElem aux;
 
-  while((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority) || (pq->heapArray[indiceAct] < pq->heapArray[derHijo].priority))
+  while((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority) || (pq->heapArray[indiceAct].priority < pq->heapArray[derHijo].priority))
   {
     if((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority)&&(pq->heapArray[indiceAct].priority > pq->heapArray[derHijo].priority))
     {
