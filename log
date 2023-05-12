@@ -229,3 +229,13 @@ heap.c:54:25: error: unused variable ‘heapArray’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 19c27e8
+Fri 12 May 2023 12:55:51 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:54:22: error: invalid initializer
+   54 |       heapElem aux = pq->heapArray;
+      |                      ^~
+Compilation failed
+ba97630
