@@ -67,8 +67,7 @@ void heap_pop(Heap* pq)
   //Si esta vacio
   if(pq->size == 0)
   {
-    return;s
-      
+    return; 
   }
   
 
