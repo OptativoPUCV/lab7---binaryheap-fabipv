@@ -88,7 +88,7 @@ void heap_pop(Heap* pq)
   {
     if(hijoIzq >= pq->size && hijoDer >= pq->size)
     {
-      break
+      break;
     }
     
   }
