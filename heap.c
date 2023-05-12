@@ -113,6 +113,20 @@ void heap_pop(Heap* pq)
         break;
       }
     }
+    else if (izqHijo < pq->size)
+    {
+      if(pq->heapArray[pos].priority > pq->heapArray[izqHijo].priority)
+      {
+        heapElem aux = pq->heapArray[pos];
+        pq->heapArray[pos] = pq->heapArray[izqHijo];
+        pq->heapArray[izqHijo] = aux;
+        pos= izqHijo;
+      }
+      else
+      {
+        break;
+      }
+    }
   }
 
 }
