@@ -76,6 +76,22 @@ void heap_pop(Heap* pq)
   pq->heapArray[0] = pq->heapArray[pq->size-1];
   pq->heapArray[pq->size-1] = aux;
 
+  //eliminar el ultimo 
+  pq->size--;
+
+  //reordenar monticulo
+  int pos = 0;
+  while(pos < pq->size)
+  {
+    int izqHijo = (2*pos) + 1;
+    int derHijo = (2*pos) + 2;
+
+    
+    if((izqHijo < pq->size) && (derHijo < pq,size))
+      
+    )
+  }
+
 }
 
 Heap* createHeap()

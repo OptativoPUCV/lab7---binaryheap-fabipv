@@ -299,3 +299,24 @@ Fri 12 May 2023 01:44:50 AM UTC:
  tests:  7|1
 total_score: 45/70
 a16cc08
+Fri 12 May 2023 01:50:04 AM UTC: 
+ heap.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:90:41: error: comparison between pointer and integer [-Werror]
+   90 |     if((izqHijo < pq->size) && (derHijo < pq,size))
+      |                                         ^
+heap.c:90:46: error: ‘size’ undeclared (first use in this function)
+   90 |     if((izqHijo < pq->size) && (derHijo < pq,size))
+      |                                              ^~~~
+heap.c:90:46: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:90:45: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   90 |     if((izqHijo < pq->size) && (derHijo < pq,size))
+      |                                             ^
+heap.c:92:5: error: expected statement before ‘)’ token
+   92 |     )
+      |     ^
+cc1: all warnings being treated as errors
+Compilation failed
+e111186
