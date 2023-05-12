@@ -72,44 +72,38 @@ void heap_pop(Heap* pq)
 
   //Intercambiar el primero con el ultimo
 
-  heapElem aux = pq->heapArray[0];
+  heapElem aux;
   pq->heapArray[0] = pq->heapArray[pq->size-1];
-  pq->heapArray[pq->size-1] = aux;
 
   //eliminar el ultimo 
   pq->size--;
 
-  //reordenar monticulo
-  int pos = 0;
-  while(pos < pq->size)
+  if(pq->size == 1)
   {
-    int izqHijo = (2*pos) + 1;
-    int derHijo = (2*pos) + 2;
-
-    if(izqHijo >= pq->size)
-    {
-      break;
-    }
-
-    int hijoMenor = izqHijo;
-
-    if((derHijo < pq->size) && (pq->heapArray[derHijo].priority < pq->heapArray[izqHijo].priority))
-    {
-      hijoMenor = derHijo;
-    }
-
-    if(pq->heapArray[pos].priority > pq->heapArray[hijoMenor].priority)
-    {
-      heapElem aux = pq->heapArray[pos];
-      pq->heapArray[pos] = pq->heapArray[hijoMenor];
-      pq->heapArray[hijoMenor] = aux;
-      pos = hijoMenor;
-    }
-    else
-    {
-      break;
-    }
+    pq->capac = 0;
+    return;
   }
+
+  for(int i = 0; i < pq->capac; i++)
+    {
+      int izqHijo = 2*i + 1;
+      int derHijo = 2*i + 2;
+
+      if(pq->heapArray[izqHijo].priority > pq->heapArray[derHijo].priority)
+      {
+        aux = pq->heapArray[(i - 1) / 2];
+        pq->heapArray[(i - 1) / 2] = pq->heapArray[izqHijo];
+        pq->heapArray[izqHijo] = aux;
+      }
+      else
+      {
+        aux = pq->heapArray[(i - 1) / 2];
+        pq->heapArray[(i - 1) / 2] = pq->heapArray[derHijo];
+        pq->heapArray[derHijo] = aux;
+      }
+    }
+  
+
   
 
 }
