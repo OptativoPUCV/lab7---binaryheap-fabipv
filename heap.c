@@ -84,15 +84,23 @@ void heap_pop(Heap* pq)
       pq->heapArray[indiceAct] = pq->heapArray[izqHijo];
       pq->heapArray[izqHijo] = aux;
 
-      
+      indiceAct = izqHijo;
+      izqHijo = (2 * indiceAct) + 1;
+      derHijo = (2 * indiceAct) + 2;
     }
-    
-      
+
+     if((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority)&&(pq->heapArray[indiceAct].priority < pq->heapArray[derHijo].priority))
+    {
+      aux = pq->heapArray[indiceAct];
+      pq->heapArray[indiceAct] = pq->heapArray[derHijo];
+      pq->heapArray[derHijo] = aux;
+
+      indiceAct = derHijo;
+      izqHijo = (2 * indiceAct) + 1;
+      derHijo = (2 * indiceAct) + 2;
+    }      
   }
-  
-  
-
-
+  pq->size--;
 }
 
 Heap* createHeap()
