@@ -58,7 +58,7 @@ void heap_push(Heap* pq, void* data, int priority)
       pos = nuevaPos;
       nuevaPos = (pos - 1) / 2;
     }
-    
+    pq->size++;
 
   }
 
