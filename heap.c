@@ -127,7 +127,7 @@ void heap_pop(Heap* pq)
     }
     else
     {
-      break,
+      break;
     }
     
   }
