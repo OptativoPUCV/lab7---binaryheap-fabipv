@@ -189,3 +189,9 @@ heap.c:42:14: error: variable ‘new’ set but not used [-Werror=unused-but-set
 cc1: all warnings being treated as errors
 Compilation failed
 54d0445
+Fri 12 May 2023 12:42:10 AM UTC: 
+ heap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+ tests:  2|2
+total_score: 20/70
+4f459a0

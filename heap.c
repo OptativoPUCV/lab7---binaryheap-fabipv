@@ -42,6 +42,9 @@ void heap_push(Heap* pq, void* data, int priority)
     heapElem new;
     new.data = data;
     new.priority = priority;
+
+    int pos = pq->size;
+    pq->heapArray[pos] = new;
   }
 
 }
