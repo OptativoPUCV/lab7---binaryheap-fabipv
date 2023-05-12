@@ -88,8 +88,31 @@ void heap_pop(Heap* pq)
 
     
     if((izqHijo < pq->size) && (derHijo < pq->size))
-      
-    )
+    {
+      if((pq->heapArray[pos].priority > pq->heapArray[izqHijo].priority) || (pq->heapArray[pos].priority > pq->heapArray[derHijo].priority))
+      {
+        if(pq->heapArray[izqHijo].priority < pq->heapArray[derHijo].priority)
+        {
+          // intercambio con el hijo izquierdo
+          heapElem aux = pq->heapArray[pos];
+          pq->heapArray[pos] = pq->heapArray[izqHijo];
+          pq->heapArray[izqHijo] = aux;
+          pos = izqHijo;
+        }
+        else
+        {
+          //intercambio con el hijo derecho
+          heapElem aux = pq->heapArray[pos];
+          pq->heapArray[pos] = pq->heapArray[derHijo];
+          pq->heapArray[derHijo] = aux;
+          pos = derHijo;
+        }
+      }
+      else
+      {
+        break;
+      }
+    }
   }
 
 }
