@@ -105,7 +105,7 @@ void heap_pop(Heap* pq)
     
     aux = pq->heapArray[comparador];
     pq->heapArray[comparador] = pq->heapArray[current];
-    pq->heapArray[comparador] = aux;
+    pq->heapArray[current] = aux;
     
     comparador = current;
   }
