@@ -239,3 +239,9 @@ heap.c:54:22: error: invalid initializer
       |                      ^~
 Compilation failed
 ba97630
+Fri 12 May 2023 12:56:08 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+a4e0cf1
