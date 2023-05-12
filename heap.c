@@ -72,7 +72,7 @@ void heap_pop(Heap* pq)
 
   //Intercambiar el primero con el ultimo
 
-  heapElem aux;
+ // heapElem aux;
   pq->heapArray[0] = pq->heapArray[pq->size-1];
 
   //eliminar el ultimo 
