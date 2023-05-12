@@ -79,31 +79,23 @@ void heap_pop(Heap* pq)
   //reordenar 
 
   int var = 0;
-  
-  int izq;
-  int der;
-  
   heapElem aux;
 
   while(1)
   {
-   int current = var;
-    izq = (2 * current)+ 1;
-    der = (2 * current)+ 2;
+    int current = var;
+    int izq = (2 * current)+ 1;
+    int der = (2 * current)+ 2;
 
     if(izq < pq->size && pq->heapArray[current].priority < pq->heapArray[izq].priority)
     {
 
       current = izq;
-      
     }
     
     if(der < pq->size && pq->heapArray[current].priority < pq->heapArray[der].priority)
     {
-      
-
       current = der;
-      
     }
 
     if(current ==  var)
