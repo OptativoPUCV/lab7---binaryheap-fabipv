@@ -83,16 +83,6 @@ void heap_pop(Heap* pq)
 
   while(pq->heapArray[current].priority < pq->heapArray[izq].priority || pq->heapArray[current].priority < pq->heapArray[der].priority)
   {
-    if(pq->heapArray[current].priority > pq->heapArray[izq].priority &&pq->heapArray[current].priority < pq->heapArray[der].priority)
-    {
-      aux = pq->heapArray[current];
-      pq->heapArray[current] = pq->heapArray[der];
-      pq->heapArray[der] = aux;
-
-      current = der;
-      izq = (2 * current)+ 1;
-      der = (2 * current)+ 2;
-    }
 
     if(pq->heapArray[current].priority < pq->heapArray[izq].priority &&pq->heapArray[current].priority > pq->heapArray[der].priority)
     {
@@ -101,6 +91,17 @@ void heap_pop(Heap* pq)
       pq->heapArray[izq] = aux;
 
       current = izq;
+      izq = (2 * current)+ 1;
+      der = (2 * current)+ 2;
+    }
+    
+    if(pq->heapArray[current].priority > pq->heapArray[izq].priority && pq->heapArray[current].priority < pq->heapArray[der].priority)
+    {
+      aux = pq->heapArray[current];
+      pq->heapArray[current] = pq->heapArray[der];
+      pq->heapArray[der] = aux;
+
+      current = der;
       izq = (2 * current)+ 1;
       der = (2 * current)+ 2;
     }
