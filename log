@@ -406,3 +406,15 @@ Fri 12 May 2023 02:42:30 AM UTC:
  tests:  7|1
 total_score: 45/70
 e7c744d
+Fri 12 May 2023 02:52:03 AM UTC: 
+ heap.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:79:108: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘int’)
+   79 |   while((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority) || (pq->heapArray[indiceAct] < pq->heapArray[derHijo].priority))
+      |                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                |                                   |
+      |                                                                                                heapElem {aka struct nodo}          int
+Compilation failed
+1c89552
