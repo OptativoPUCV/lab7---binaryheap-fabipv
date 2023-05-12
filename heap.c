@@ -111,9 +111,9 @@ void heap_pop(Heap* pq)
       break;
     }
     
-    aux = pq->heapArray[current];
-      pq->heapArray[current] = pq->heapArray[der];
-      pq->heapArray[der] = aux;
+    aux = pq->heapArray[var];
+    pq->heapArray[var] = pq->heapArray[current];
+    pq->heapArray[current] = aux;
     
     var = current;
   }
