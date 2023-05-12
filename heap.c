@@ -103,6 +103,7 @@ void heap_pop(Heap* pq)
       heapElem aux = pq->heapArray[pos];
       pq->heapArray[pos] = pq->heapArray[hijoMenor];
       pq->heapArray[hijoMenor] = aux;
+      pos = izqHijo;
     }
     else
     {
