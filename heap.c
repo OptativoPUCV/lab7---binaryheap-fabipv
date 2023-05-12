@@ -76,9 +76,9 @@ void heap_pop(Heap* pq)
   int indiceAct = 0;
   heapElem aux;
 
-  while((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority) || (pq->heapArray[indiceAct].priority < pq->heapArray[derHijo].priority))
+  while(pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority || pq->heapArray[indiceAct].priority < pq->heapArray[derHijo].priority)
   {
-    if((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority)&&(pq->heapArray[indiceAct].priority > pq->heapArray[derHijo].priority))
+    if(pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority && pq->heapArray[indiceAct].priority > pq->heapArray[derHijo].priority)
     {
       aux = pq->heapArray[indiceAct];
       pq->heapArray[indiceAct] = pq->heapArray[izqHijo];
@@ -89,7 +89,7 @@ void heap_pop(Heap* pq)
       derHijo = (2 * indiceAct) + 2;
     }
 
-     if((pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority)&&(pq->heapArray[indiceAct].priority < pq->heapArray[derHijo].priority))
+     if(pq->heapArray[indiceAct].priority < pq->heapArray[izqHijo].priority && pq->heapArray[indiceAct].priority < pq->heapArray[derHijo].priority )
     {
       aux = pq->heapArray[indiceAct];
       pq->heapArray[indiceAct] = pq->heapArray[derHijo];
