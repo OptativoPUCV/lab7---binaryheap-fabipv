@@ -86,9 +86,25 @@ void heap_pop(Heap* pq)
 
   while(true)
   {
+    // no tiene hijo izquierdo ni derecho
     if(hijoIzq >= pq->size && hijoDer >= pq->size)
     {
       break;
+    }
+
+    
+    if(hijoDer < pq->size && pq->heapArray[hijoDer].priority > pq->heapArray[hijoIzq].priority)
+    {
+      actual = hijoDer;
+    }
+
+    if(hijoIzq < pq->size && pq->heapArray[hijoIzq].priority > pq->heapArray[actual].priority)
+    {
+      if(hijoDer >= pq->size)
+      {
+        break;
+      }
+        
     }
     
   }
