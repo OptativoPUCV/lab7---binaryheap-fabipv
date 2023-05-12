@@ -269,3 +269,21 @@ Fri 12 May 2023 01:42:01 AM UTC:
  tests:  7|1
 total_score: 45/70
 2413765
+Fri 12 May 2023 01:42:06 AM UTC: 
+ heap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:70:12: error: ‘s’ undeclared (first use in this function)
+   70 |     return;s
+      |            ^
+heap.c:70:12: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:70:13: error: expected ‘;’ before ‘}’ token
+   70 |     return;s
+      |             ^
+      |             ;
+   71 | 
+   72 |   }
+      |   ~          
+Compilation failed
+8b9ba47
