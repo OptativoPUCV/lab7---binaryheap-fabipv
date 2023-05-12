@@ -93,9 +93,6 @@ void heap_pop(Heap* pq)
 
     if(izq < pq->size && pq->heapArray[current].priority < pq->heapArray[izq].priority)
     {
-      aux = pq->heapArray[current];
-      pq->heapArray[current] = pq->heapArray[izq];
-      pq->heapArray[izq] = aux;
 
       current = izq;
       
@@ -103,9 +100,7 @@ void heap_pop(Heap* pq)
     
     if(der < pq->size && pq->heapArray[current].priority < pq->heapArray[der].priority)
     {
-      aux = pq->heapArray[current];
-      pq->heapArray[current] = pq->heapArray[der];
-      pq->heapArray[der] = aux;
+      
 
       current = der;
       
@@ -115,6 +110,11 @@ void heap_pop(Heap* pq)
     {
       break;
     }
+    
+    aux = pq->heapArray[current];
+      pq->heapArray[current] = pq->heapArray[der];
+      pq->heapArray[der] = aux;
+    
     var = current;
   }
   
