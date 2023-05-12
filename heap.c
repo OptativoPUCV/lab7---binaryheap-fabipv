@@ -73,8 +73,6 @@ void heap_pop(Heap* pq)
   //mover el ultimo al primero
   pq->heapArray[0] = pq->heapArray[pq->size];
 
-  //eliminar
-  pq->size--;
 
   //reordenar 
 
