@@ -87,7 +87,7 @@ void heap_pop(Heap* pq)
     int derHijo = (2*pos) + 2;
 
     
-    if((izqHijo < pq->size) && (derHijo < pq,size))
+    if((izqHijo < pq->size) && (derHijo < pq->size))
       
     )
   }
