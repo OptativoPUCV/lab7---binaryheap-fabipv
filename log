@@ -195,3 +195,17 @@ Fri 12 May 2023 12:42:10 AM UTC:
  tests:  2|2
 total_score: 20/70
 4f459a0
+Fri 12 May 2023 12:53:38 AM UTC: 
+ heap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:52:66: error: array subscript is not an integer
+   52 |     while(pos > 0 && (pq->heapArray[pos].priority > pq->heapArray[new].priority))
+      |                                                                  ^
+heap.c:50:9: error: unused variable ‘nuevaPos’ [-Werror=unused-variable]
+   50 |     int nuevaPos = (pos - 1) / 2;
+      |         ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+328a091

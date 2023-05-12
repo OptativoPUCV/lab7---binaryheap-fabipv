@@ -45,6 +45,16 @@ void heap_push(Heap* pq, void* data, int priority)
 
     int pos = pq->size;
     pq->heapArray[pos] = new;
+    pq->size++;
+
+    int nuevaPos = (pos - 1) / 2;
+
+    while(pos > 0 && (pq->heapArray[pos].priority > pq->heapArray[new].priority))
+    {
+      
+    }
+    
+
   }
 
 }
