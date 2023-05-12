@@ -460,3 +460,14 @@ Fri 12 May 2023 03:23:20 AM UTC:
  tests:  8|0
 total_score: 70/70
 0b6970b
+Fri 12 May 2023 12:24:10 PM UTC: 
+ heap.c | 26 --------------------------
+ 1 file changed, 26 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:74:7: error: unused variable ‘indice’ [-Werror=unused-variable]
+   74 |   int indice = 0;
+      |       ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+28d2e73
