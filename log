@@ -587,3 +587,16 @@ Fri 12 May 2023 01:19:11 PM UTC:
  tests:  7|1
 total_score: 45/70
 5aba43e
+Fri 12 May 2023 02:14:44 PM UTC: 
+ heap.c | 70 +++++++++++++++++++-----------------------------------------------
+ 1 file changed, 20 insertions(+), 50 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:110:13: error: expected ‘;’ before ‘}’ token
+  110 |   pq->size--
+      |             ^
+      |             ;
+  111 | }
+      | ~            
+Compilation failed
+caec183

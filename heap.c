@@ -71,73 +71,43 @@ void heap_pop(Heap* pq)
   }
 
   //mover el ultimo al primero
-  pq->heapArray[0] = pq->heapArray[pq->size-1];
+  pq->heapArray[0] = pq->heapArray[pq->size];
 
   //eliminar
   pq->size--;
 
   //reordenar 
 
-  int actual = 0;
-  int hijoIzq = (2 * actual)+ 1;
-  int hijoDer = (2 * actual)+ 2;
+  int current = 0;
+  int izq = (2 * pq->size)+ 1;
+  int der = (2 * pq->size)+ 2;
   heapElem aux;
 
-  while(true)
+  while(pq->heapArray[current].priority < pq->heapArray[izq].priority || pq->heapArray[current].priority < pq->heapArray[der].priority)
   {
-    // no tiene hijo izquierdo ni derecho
-    if(hijoIzq >= pq->size && hijoDer >= pq->size)
+    if(pq->heapArray[current].priority > pq->heapArray[izq].priority &&pq->heapArray[current].priority < pq->heapArray[der].priority)
     {
-      break;
+      aux = pq->heapArray[current];
+      pq->heapArray[current] = pq->heapArray[der];
+      pq->heapArray[der] = aux;
+
+      current = der;
+      izq = (2 * current)+ 1;
+      der = (2 * current)+ 2;
     }
 
-    
-    if(hijoDer < pq->size && pq->heapArray[hijoDer].priority > pq->heapArray[hijoIzq].priority)
+    if(pq->heapArray[current].priority < pq->heapArray[izq].priority &&pq->heapArray[current].priority > pq->heapArray[der].priority)
     {
-      actual = hijoDer;
-    }
+      aux = pq->heapArray[current];
+      pq->heapArray[current] = pq->heapArray[izq];
+      pq->heapArray[izq] = aux;
 
-    if(hijoIzq < pq->size && pq->heapArray[hijoIzq].priority > pq->heapArray[actual].priority)
-    {
-      if(hijoDer >= pq->size)
-      {
-        break;
-      }
-      else if (pq->heapArray[hijoDer].priority <= pq->heapArray[hijoIzq].priority)
-      {
-        break;
-      }
-      else
-      {
-        aux = pq->heapArray[hijoIzq];
-        pq->heapArray[hijoIzq] = pq->heapArray[actual];
-        pq->heapArray[actual] = aux;
-        actual = hijoIzq;
-        
-      }  
+      current = izq;
+      izq = (2 * current)+ 1;
+      der = (2 * current)+ 2;
     }
-    else if(pq->heapArray[hijoIzq].priority > pq->heapArray[actual].priority)
-    {
-      aux = pq->heapArray[hijoIzq];
-      pq->heapArray[hijoIzq] = pq->heapArray[actual];
-      pq->heapArray[actual] = aux;
-      actual = hijoIzq;
-      
-    }
-    else
-    {
-      break;
-    }
-    
   }
-
-  
-
-  
-
- 
-
-  
+  pq->size--
 }
 
 Heap* createHeap()
