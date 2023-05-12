@@ -71,7 +71,7 @@ void heap_pop(Heap* pq)
 
   pq->heapArray[0] = pq->heapArray[pq->size-1];
   pq->size--;
-  int indice = 0;
+  //int indice = 0;
 
  
 
