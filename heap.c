@@ -70,8 +70,6 @@ void heap_pop(Heap* pq)
     return;
   }
 
-  heapElem mayor = pq->heapArray[0];
-
   //mover el ultimo al primero
   pq->heapArray[0] = pq->heapArray[pq->size-1];
 
@@ -83,6 +81,7 @@ void heap_pop(Heap* pq)
   int actual = 0;
   int hijoIzq = (2 * actual)+ 1;
   int hijoDer = (2 * actual)+ 2;
+  heapElem aux;
 
   while(true)
   {
@@ -110,7 +109,7 @@ void heap_pop(Heap* pq)
       }
       else
       {
-        heapElem aux = pq->heapArray[hijoIzq];
+        aux = pq->heapArray[hijoIzq];
         pq->heapArray[hijoIzq] = pq->heapArray[actual];
         pq->heapArray[actual] = aux;
         actual = hijoIzq;
@@ -119,7 +118,7 @@ void heap_pop(Heap* pq)
     }
     else if(pq->heapArray[hijoIzq].priority > pq->heapArray[actual].priority)
     {
-      heapElem aux = pq->heapArray[hijoIzq];
+      aux = pq->heapArray[hijoIzq];
       pq->heapArray[hijoIzq] = pq->heapArray[actual];
       pq->heapArray[actual] = aux;
       actual = hijoIzq;
