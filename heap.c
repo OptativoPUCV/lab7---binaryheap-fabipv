@@ -107,7 +107,7 @@ void heap_pop(Heap* pq)
       der = (2 * current)+ 2;
     }
   }
-  pq->size--
+  pq->size--;
 }
 
 Heap* createHeap()
